@@ -1,0 +1,4 @@
+# Core runtime dependencies for the ETL/analysis pipeline
+requests==2.34.2
+pandas==3.0.5
+python-dotenv==1.2.3
