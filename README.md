@@ -78,6 +78,14 @@ fhrs-london-insights/
 Python (pandas, numpy, scikit-learn, statsmodels, scipy, matplotlib, seaborn) · Jupyter ·
 Snowflake · Tableau Public
 
+## Reproducibility
+
+This project is structured as a sequence of self-contained Jupyter notebooks (`01`–`06`), each loading its inputs from disk rather than depending on another notebook's in-memory state. Reproducing the full pipeline means running them in numbered order.
+
+Notebooks are intentionally the primary artifact here - they preserve the analytical reasoning and decisions behind the pipeline, not just its output, which is a more useful record for a portfolio project than a stripped-down production script would be.  
+
+A potential future enhancement may involve a 'productionised' output-only pipeline, but due to time constraints (and the value of showing my working) I'll keep the _notebooks-as-pipeline_ approach for now.  
+
 ## Status
 
 - [x] Data pipeline (extraction, cleaning, LSOA/deprivation joins)
