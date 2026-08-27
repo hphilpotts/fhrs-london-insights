@@ -1,0 +1,63 @@
+{
+  "target": "FHRS rating < 5 stars (fail) vs 5 stars (pass)",
+  "features": [
+    "income_decile",
+    "BusinessTypeGrouped_Hotel/bed & breakfast/guest house",
+    "BusinessTypeGrouped_Manufacturers/packers",
+    "BusinessTypeGrouped_Mobile caterer",
+    "BusinessTypeGrouped_Other",
+    "BusinessTypeGrouped_Other catering premises",
+    "BusinessTypeGrouped_Pub/bar/nightclub",
+    "BusinessTypeGrouped_Restaurant/Cafe/Canteen",
+    "BusinessTypeGrouped_Retailers - other",
+    "BusinessTypeGrouped_Retailers - supermarkets/hypermarkets",
+    "BusinessTypeGrouped_School/college/university",
+    "BusinessTypeGrouped_Takeaway/sandwich shop",
+    "LocalAuthorityName_Barnet",
+    "LocalAuthorityName_Bexley",
+    "LocalAuthorityName_Brent",
+    "LocalAuthorityName_Bromley",
+    "LocalAuthorityName_Camden",
+    "LocalAuthorityName_City of London Corporation",
+    "LocalAuthorityName_Croydon",
+    "LocalAuthorityName_Ealing",
+    "LocalAuthorityName_Enfield",
+    "LocalAuthorityName_Greenwich",
+    "LocalAuthorityName_Hackney",
+    "LocalAuthorityName_Hammersmith and Fulham",
+    "LocalAuthorityName_Haringey",
+    "LocalAuthorityName_Harrow",
+    "LocalAuthorityName_Havering",
+    "LocalAuthorityName_Hillingdon",
+    "LocalAuthorityName_Hounslow",
+    "LocalAuthorityName_Islington",
+    "LocalAuthorityName_Kensington and Chelsea",
+    "LocalAuthorityName_Kingston-Upon-Thames",
+    "LocalAuthorityName_Lambeth",
+    "LocalAuthorityName_Lewisham",
+    "LocalAuthorityName_Merton",
+    "LocalAuthorityName_Newham",
+    "LocalAuthorityName_Redbridge",
+    "LocalAuthorityName_Richmond-Upon-Thames",
+    "LocalAuthorityName_Southwark",
+    "LocalAuthorityName_Sutton",
+    "LocalAuthorityName_Tower Hamlets",
+    "LocalAuthorityName_Waltham Forest",
+    "LocalAuthorityName_Wandsworth",
+    "LocalAuthorityName_Westminster"
+  ],
+  "classifier": {
+    "type": "LogisticRegression, class_weight='balanced'",
+    "test_set_metrics": {
+      "accuracy": 0.63,
+      "fail_f1": 0.55,
+      "pass_f1": 0.69
+    }
+  },
+  "risk_scorer": {
+    "type": "LogisticRegression, unweighted (for calibrated probabilities)",
+    "calibration_note": "Well-calibrated across observed 0.08-0.54 range; mild under-confidence above ~0.6"
+  },
+  "trained_on_rows": 63409,
+  "known_limitations": "Poor separation of critical (<=2*) ratings across every approach tested (three-tier, binary, ordinal, oversampled). Available features (deprivation deciles, business type, borough) appear insufficient for this specific distinction."
+}
