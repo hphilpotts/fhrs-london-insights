@@ -45,6 +45,7 @@ All data is scoped to London (33 boroughs, ~81,000 establishments as of the most
 | `03_ons_join.ipynb` | Postcode to LSOA join (full + sector-level 'fallback'), IMD 2025 overall decile join, deprivation/rating significance testing |
 | `04_imd_domain_join.ipynb` | IMD 2025 _domain-level_ data (Income, Employment, Education, Health, Crime, Barriers, Living Environment) join and testing |
 | `05_modelling.ipynb` | Model build, comparison, and selection; final classifier and risk-scoring model |
+| `06_scoring.ipynb` | Applies model outputs to full London dataset, outputs single scored table |
 
 Each notebook loads its input from `data/processed/` (or `data/raw/` for the first notebook) rather than depending on in-memory state, and saves its own output. The pipeline can be re-run end-to-end from a clean environment.
 
@@ -63,7 +64,7 @@ fhrs-london-insights/
 ├── data/
 │   ├── raw/                 # API pulls & downloaded source files (not tracked)
 │   └── processed/           # Cleaned/joined tables (not tracked)
-├── notebooks/               # 01-05, see 'Pipeline' above
+├── notebooks/               # 01-06, see 'Pipeline' above
 ├── models/                  # Saved classifier + risk-scorer (joblib), feature list, model card
 ├── sql/                     # Snowflake SQL - in progress
 ├── outputs/                 # Tableau-ready exports - planned
