@@ -55,7 +55,7 @@ Each notebook loads its input from `data/processed/` (or `data/raw/` for the fir
 - **Income is the strongest individual deprivation domain**; **Living Environment** is essentially unrelated to rating outcome within London. This is likely a national-vs-urban comparison artefact (as London scores poorly on this domain regardless of local affluence, a pattern independently corroborated by other London-specific deprivation analysis).
 - **Severely poor ("critical", ≤2) ratings are genuinely hard to separate** with the available features. This held true across every approach tested - three-tier and binary logistic regression, and both weighted and unweighted ordinal regression - pointing to an intrinsic feature/signal limitation rather than a fixable modelling choice.
 - The strongest working model targets a different, better-supported question: **whether an establishment is likely to fall short of a 5 rating** (`lt5`, i.e. `<5`), using business type, borough, and income decile. Test set yielded **63%** accuracy, 'fail rating' F1 **0.55**, 'pass rating' F1 **0.69**.
-- A separate, unweighted version of the same model produces a **calibrated risk score** (predicted probability of falling below 5★) rather than a binary call - validated via a calibration curve, and arguably a more honest and practically useful output than a single yes/no classification.
+- A separate, unweighted version of the same model produces a **calibrated risk score** (predicted probability of falling below 5) rather than a binary call - validated via a calibration curve, and arguably a more honest and practically useful output than a single yes/no classification.   
 
 ## Repository structure
 
@@ -66,8 +66,8 @@ fhrs-london-insights/
 │   └── processed/           # Cleaned/joined tables (not tracked)
 ├── notebooks/               # 01-06, see 'Pipeline' above
 ├── models/                  # Saved classifier + risk-scorer (joblib), feature list, model card
-├── sql/                     # Snowflake SQL - in progress
-├── outputs/                 # Tableau-ready exports - planned
+├── sql/                     # Snowflake SQL (archived worksheets from Snowsight)
+├── outputs/                 # Tableau-ready exports (scored data & lean fallback, aggregate views)
 ├── requirements.txt         # Minimal runtime dependencies
 ├── requirements-dev.txt     # Full dev environment (incl. Jupyter)
 └── README.md
@@ -90,7 +90,7 @@ A potential future enhancement may involve a 'productionised' output-only pipeli
 
 - [x] Data pipeline (extraction, cleaning, LSOA/deprivation joins)
 - [x] Statistical analysis & modelling
-- [ ] Snowflake SQL transforms
+- [x] Snowflake SQL transforms
 - [ ] Tableau Public dashboard
 
 ## Known limitations
