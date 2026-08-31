@@ -28,13 +28,18 @@ There is no official 'pass or fail' mark, however anything less than **5** indic
 
 | Source | Description | Access |
 |---|---|---|
-| [FSA Food Hygiene Rating Scheme API](https://api.ratings.food.gov.uk/Help) | Establishment-level FHRS ratings, UK-wide | Free, keyless |
+| [FSA Food Hygiene Rating Scheme API](https://api.ratings.food.gov.uk/Help) | Establishment-level FHRS ratings (England, Wales & Northern Ireland) | Free, keyless |
 | [ONS Postcode to LSOA lookup](https://open-geography-portalx-ons.hub.arcgis.com/) | Maps postcode to 2021 LSOA geography, November 2025 | Free download |
 | [English Indices of Deprivation 2025](https://www.gov.uk/government/statistics/english-indices-of-deprivation-2025) | LSOA-level deprivation - overall index + 7 domains | Free download |
+| [TfL Open Data](https://tfl.gov.uk/info-for/open-data-users/) | London borough boundary geometry, used for the Tableau choropleth map | Free download |
 
-All data is scoped to London (33 boroughs, ~81,000 establishments as of the most recent pull).  
+All data is scoped to London (33 boroughs, ~81,000 establishments as of the most recent pull).
 
-**LSOA** (Lower Layer Super Output Area) is a small geographic unit designed by the Office for National Statistics, for reporting local census and statistical data.  
+**LSOA** (Lower Layer Super Output Area) is a small geographic unit designed by the Office for National Statistics, for reporting local census and statistical data.
+
+### Licensing & attribution
+
+Contains public sector information licensed under the Open Government Licence v3.0. Deprivation data published by the Ministry of Housing, Communities and Local Government (MHCLG). Powered by TfL Open Data; contains OS data © Crown copyright and database rights.
 
 ## Pipeline
 
